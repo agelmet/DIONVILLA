@@ -1,0 +1,16 @@
+{
+ "source": {
+  "kind": "file",
+  "ref": "assets/img/dion-villa-icon.svg"
+ },
+ "source_md5": "86a975cbab61ad1c107bd797c4fd72ff",
+ "version": "22c36761",
+ "tile": "#0F2433",
+ "crop": null,
+ "header": [
+  "inline",
+  "index.html",
+  "50e629e5a6dfd9b2e30ff11c5465bc52"
+ ],
+ "made": "2026-11-11"
+}
