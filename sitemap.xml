@@ -1,3 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://dionvillazakynthos.com/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://dionvillazakynthos.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dionvillazakynthos.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dionvillazakynthos.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://dionvillazakynthos.com/en</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://dionvillazakynthos.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dionvillazakynthos.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dionvillazakynthos.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
