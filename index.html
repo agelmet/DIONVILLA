@@ -97,7 +97,24 @@
 .bk-in{padding-top:30px}
 }
 </style>
-</head>
+<style id="mbar-desk-css">
+/* quick-action bar also on desktop (Stoufi, 19 Nov 2026) */
+.mbar .mb-n{display:none}
+@media (min-width:801px){
+.mbar{display:flex;position:fixed;left:50%;bottom:22px;z-index:55;border-radius:999px;background:rgba(10,23,34,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#fff;box-shadow:0 18px 44px -12px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.08);transform:translate(-50%,160%);transition:transform .5s var(--ease);overflow:hidden}
+.mbar.show{transform:translate(-50%,0)}
+.mbar.show.dk-off{transform:translate(-50%,160%)}
+.mbar a{display:flex;align-items:center;gap:10px;min-height:54px;padding:0 24px;font:500 11.5px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;transition:background .25s}
+.mbar a+a{border-left:1px solid rgba(255,255,255,.12)}
+.mbar a.p{background:var(--aqua);color:#06202A;padding:0 28px}
+.mbar svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.mbar svg.wa{fill:currentColor;stroke:none}
+.mbar .mb-n{display:inline;letter-spacing:.06em;opacity:.75;font-weight:400}
+@media (hover:hover){.mbar a:not(.p):hover{background:rgba(255,255,255,.1)}.mbar a.p:hover{filter:brightness(1.08)}}
+footer{padding-bottom:96px!important}
+}
+@media (prefers-reduced-motion:reduce){.mbar{transition:none}}
+</style></head>
 <body>
 <!-- DION VILLA · Advon Media · style «Λιθόκτιστο φως» (Sunlit minimal × luxury editorial) · skeleton: full-bleed cinematic hero with availability bar / top bar nav / services = alternating image-text bands (sticky text) / social proof = 3-card row + Google score / contact = full-width night band with composer / signature = «Μια μέρα στη Dion Villa» pinned day timeline / FAQ = two-column (fact card + accordion) before contact · opening «Το τζάμι» (frosted pool-glass pane slides away) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -646,7 +663,7 @@
 </footer>
 
 <nav class="mbar" id="mbar" aria-label="Γρήγορες ενέργειες" data-en-aria="Quick actions">
-  <a href="tel:+306972294250"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3h3l1.500 4-2 1.500a10 10 0 0 0 5 5l1.500-2 4 1.500v3a1.500 1.500 0 0 1-1.500 1.500A14 14 0 0 1 2.500 4.500 1.500 1.500 0 0 1 4 3z"/></svg><span data-en="Call">Κλήση</span></a>
+  <a href="tel:+306972294250"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3h3l1.500 4-2 1.500a10 10 0 0 0 5 5l1.500-2 4 1.500v3a1.500 1.500 0 0 1-1.500 1.500A14 14 0 0 1 2.500 4.500 1.500 1.500 0 0 1 4 3z"/></svg><span data-en="Call">Κλήση</span> <span class="mb-n">697 229 4250</span></a>
   <a class="p" href="#kratisi"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="4.500" width="14" height="12.500" rx="2"/><path d="M3 8.500h14M7 2.500v4M13 2.500v4"/></svg><span data-en="Booking request">Αίτημα κράτησης</span></a>
   <a href="https://wa.me/306972294250" target="_blank" rel="noopener"><svg class="wa" aria-hidden="true"><use href="#wa"/></svg><span>WhatsApp</span></a>
 </nav>
@@ -802,5 +819,5 @@
 </script>
 <script id="r13c-js">(function(){document.querySelectorAll(".ep-bk").forEach(function(bk){var row=bk.parentNode.querySelector(".ep-th");if(!row)return;var pages=bk.querySelectorAll(".ep-s"),tb=row.querySelectorAll(".ep-tb");function mark(){pages.forEach(function(p,i){if(tb[i])tb[i].classList.toggle("on",p.classList.contains("on"))})}mark();new MutationObserver(mark).observe(bk,{subtree:true,attributes:true,attributeFilter:["class"]});tb.forEach(function(b,i){b.addEventListener("click",function(){var a=pages[i]&&pages[i].querySelector("a.ph");if(a)a.click()})})})})();</script>
 <script id="advon-en-nav">/* flags = links between / and /en (Google ranks both) */document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("button[data-l],button[data-lang],a[data-l],a[data-lang],[data-set-lang]");if(!b)return;var l=b.getAttribute("data-l")||b.getAttribute("data-lang")||b.getAttribute("data-set-lang");if(l==="el"||(l!=="el"&&l!=="en"))return;e.preventDefault();e.stopImmediatePropagation();location.href=(l==="en"?"en":"./")+location.hash},true)</script>
-</body>
+<script id="mbar-desk-js">(function(){var m=document.getElementById('mbar');if(!m)return;var q=matchMedia('(min-width:801px)'),r=0;function u(){r=0;m.classList.toggle('dk-off',q.matches&&scrollY<innerHeight*.55)}function s(){if(!r){r=1;requestAnimationFrame(u)}}addEventListener('scroll',s,{passive:true});addEventListener('resize',s);u()})();</script></body>
 </html>
