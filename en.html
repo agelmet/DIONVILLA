@@ -115,7 +115,32 @@
 footer{padding-bottom:96px!important}
 }
 @media (prefers-reduced-motion:reduce){.mbar{transition:none}}
-</style></head>
+</style><style id="r15-css">
+/* DIONVILLA r15 (21 Nov 2026) — Stoufi: on the phone every photo whole and fitted to the screen width, the sun back in «Μια μέρα εδώ» */
+@media (max-width:900px){
+#mera.r15 .dp-m{margin-left:auto;margin-right:auto;max-width:100%;transition:height .9s cubic-bezier(.4,0,.2,1),width .9s cubic-bezier(.4,0,.2,1)}
+#mera.r15 .dp-m>img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain}
+#mera.r15 .day-st{gap:44px}
+#mera.r15 .skb{position:sticky;top:64px;z-index:8;align-self:start;height:66px;margin:-8px 0 -26px;overflow:hidden;background:linear-gradient(180deg,var(--sa,#F6C58A),var(--sb,#2B4A63));box-shadow:0 10px 24px -14px rgba(0,0,0,.7);pointer-events:none}
+#mera.r15 .skb::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(255,255,255,.22)}
+#mera.r15 .skb svg{position:absolute;top:0;left:0;width:100%;height:100%;overflow:visible}
+#mera.r15 .skb-a{fill:none;stroke:rgba(255,255,255,.5);stroke-width:1;stroke-dasharray:2 6;vector-effect:non-scaling-stroke}
+#mera.r15 .skb-d{fill:none;stroke:rgba(255,255,255,.95);stroke-width:1.5;vector-effect:non-scaling-stroke}
+#mera.r15 .skb-k{position:absolute;width:7px;height:7px;margin:-3.5px 0 0 -3.5px;border-radius:50%;background:rgba(255,255,255,.35);box-shadow:0 0 0 1px rgba(255,255,255,.5);transition:background .4s,transform .4s}
+#mera.r15 .skb-k.on{background:#fff;transform:scale(1.15)}
+#mera.r15 .skb-s{position:absolute;left:0;top:0;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;background:radial-gradient(circle,#FFF6D8 0 30%,rgba(255,214,120,.95) 33% 42%,rgba(255,200,90,0) 72%);will-change:transform;transition:background .8s}
+#mera.r15 .skb-s.moon{background:radial-gradient(circle at 42% 42%,#F4F8FF 0 26%,rgba(214,228,255,.6) 30%,rgba(180,210,255,0) 70%)}
+#mera.r15 .skb-st{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:var(--nt,0);transition:opacity .6s}
+#mera.r15 .skb-t{position:absolute;left:50%;bottom:7px;transform:translateX(-50%);font:300 25px/1 var(--serif);letter-spacing:.01em;color:#fff;font-variant-numeric:tabular-nums lining-nums;text-shadow:0 2px 14px rgba(6,16,24,.45)}
+#mera.r15 .skb-t.ro{animation:skbRo .6s cubic-bezier(.2,.8,.2,1)}
+@keyframes skbRo{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
+#epoxes .ep-bk.r15{aspect-ratio:auto;padding-bottom:0;transition:height .9s cubic-bezier(.4,0,.2,1)}
+.mo-ph.r15{display:flex;flex-wrap:wrap;gap:8px}
+.mo-ph.r15>.ph{flex:none;grid-column:auto!important;aspect-ratio:var(--ar15)!important;height:auto!important}
+.mo-ph.r15>.ph img{width:100%;height:100%!important;object-fit:cover;object-position:50% 50%!important}
+}
+</style>
+</head>
 <body>
 <!-- DION VILLA · Advon Media · style «Λιθόκτιστο φως» (Sunlit minimal × luxury editorial) · skeleton: full-bleed cinematic hero with availability bar / top bar nav / services = alternating image-text bands (sticky text) / social proof = 3-card row + Google score / contact = full-width night band with composer / signature = «Μια μέρα στη Dion Villa» pinned day timeline / FAQ = two-column (fact card + accordion) before contact · opening «Το τζάμι» (frosted pool-glass pane slides away) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -820,5 +845,83 @@ footer{padding-bottom:96px!important}
 </script>
 <script id="r13c-js">(function(){document.querySelectorAll(".ep-bk").forEach(function(bk){var row=bk.parentNode.querySelector(".ep-th");if(!row)return;var pages=bk.querySelectorAll(".ep-s"),tb=row.querySelectorAll(".ep-tb");function mark(){pages.forEach(function(p,i){if(tb[i])tb[i].classList.toggle("on",p.classList.contains("on"))})}mark();new MutationObserver(mark).observe(bk,{subtree:true,attributes:true,attributeFilter:["class"]});tb.forEach(function(b,i){b.addEventListener("click",function(){var a=pages[i]&&pages[i].querySelector("a.ph");if(a)a.click()})})})})();</script>
 <script id="advon-en-nav">/* flags = links between / and /en (Google ranks both) */document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("button[data-l],button[data-lang],a[data-l],a[data-lang],[data-set-lang]");if(!b)return;var l=b.getAttribute("data-l")||b.getAttribute("data-lang")||b.getAttribute("data-set-lang");if(l==="en"||(l!=="el"&&l!=="en"))return;e.preventDefault();e.stopImmediatePropagation();location.href=(l==="en"?"en":"./")+location.hash},true)</script>
-<script id="mbar-desk-js">(function(){var m=document.getElementById('mbar');if(!m)return;var q=matchMedia('(min-width:801px)'),r=0;function u(){r=0;m.classList.toggle('dk-off',q.matches&&scrollY<innerHeight*.55)}function s(){if(!r){r=1;requestAnimationFrame(u)}}addEventListener('scroll',s,{passive:true});addEventListener('resize',s);u()})();</script></body>
+<script id="mbar-desk-js">(function(){var m=document.getElementById('mbar');if(!m)return;var q=matchMedia('(min-width:801px)'),r=0;function u(){r=0;m.classList.toggle('dk-off',q.matches&&scrollY<innerHeight*.55)}function s(){if(!r){r=1;requestAnimationFrame(u)}}addEventListener('scroll',s,{passive:true});addEventListener('resize',s);u()})();</script><script id="r15-js">/* DIONVILLA r15 — phone: photos whole at the screen width, the sun crosses the sky in «Μια μέρα εδώ» */
+(function(){
+if(!matchMedia('(max-width:900px)').matches)return;
+var d=document,w=window,RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var CAP=Math.round((d.documentElement.clientHeight||w.innerHeight)*.78),W0=w.innerWidth;
+function ra(i){if(i.naturalWidth&&i.naturalHeight)return i.naturalWidth/i.naturalHeight;var a=+i.getAttribute('width'),b=+i.getAttribute('height');return a&&b?a/b:1.5}
+function watch(el,f){f();new MutationObserver(f).observe(el,{subtree:true,attributes:true,attributeFilter:['class']});[].forEach.call(el.querySelectorAll('img'),function(i){if(!i.complete)i.addEventListener('load',f,{once:true})})}
+var fits=[];
+/* 1 · Μια μέρα εδώ */
+var M=d.getElementById('mera');
+if(M&&!M.classList.contains('pin')){
+ M.classList.add('r15');
+ [].forEach.call(M.querySelectorAll('.dp-m'),function(m){
+  function f(){var s=m.querySelector('.sl.on'),im=(m.classList.contains('ss-x')&&s)?s:m.querySelector('img:not(.sl)');if(!im)return;var r=ra(im),W=m.parentNode.clientWidth,h=W/r,ww='';if(h>CAP){h=CAP;ww=(CAP*r).toFixed(1)+'px'}h=h.toFixed(1)+'px';if(m.style.height!==h)m.style.height=h;if(m.style.width!==ww)m.style.width=ww}
+  fits.push(f);watch(m,f)});
+ var st=d.getElementById('daySt'),dps=[].slice.call(M.querySelectorAll('.dp'));
+ if(st&&dps.length>1){
+  var P='M14 64 C 250 -22, 750 -22, 986 64';
+  var bar=d.createElement('div');bar.className='skb';bar.setAttribute('aria-hidden','true');
+  var stars='';[[8,18],[17,40],[29,14],[41,30],[58,12],[70,34],[83,16],[93,38]].forEach(function(p){stars+='<i class="skb-st" style="left:'+p[0]+'%;top:'+p[1]+'%"></i>'});
+  bar.innerHTML=stars+'<svg viewBox="0 0 1000 66" preserveAspectRatio="none"><path class="skb-a" d="'+P+'"/><path class="skb-d" d="'+P+'"/></svg>'+dps.map(function(){return '<i class="skb-k"></i>'}).join('')+'<i class="skb-s"></i><span class="skb-t">'+(dps[0].getAttribute('data-t')||'')+'</span>';
+  st.insertBefore(bar,dps[0]);
+  var arc=bar.querySelector('.skb-a'),done=bar.querySelector('.skb-d'),sun=bar.querySelector('.skb-s'),tt=bar.querySelector('.skb-t'),ks=[].slice.call(bar.querySelectorAll('.skb-k')),hd=d.getElementById('hd');
+  var L=arc.getTotalLength(),N=dps.length,U0=.05,U1=.95;
+  done.style.strokeDasharray=L+' '+L;
+  function mins(t){var p=(t||'0:0').split(':');return +p[0]*60+ +p[1]}
+  var T=dps.map(function(e){return mins(e.getAttribute('data-t'))});
+  /* sky at each hour: top, bottom */
+  var SK=[['#F7C98F','#2E5774'],['#A9DAF5','#3D84AE'],['#86C9EF','#2E7099'],['#F28A5C','#4A2C4E'],['#13283B','#07131D']];
+  while(SK.length<N)SK.push(SK[SK.length-1]);
+  function hx(c){return [parseInt(c.substr(1,2),16),parseInt(c.substr(3,2),16),parseInt(c.substr(5,2),16)]}
+  function mix(a,b,f){a=hx(a);b=hx(b);return 'rgb('+a.map(function(v,i){return Math.round(v+(b[i]-v)*f)}).join(',')+')'}
+  function pt(u){var q=arc.getPointAtLength(L*Math.max(0,Math.min(1,u)));return [q.x/1000*bar.clientWidth,q.y/66*bar.clientHeight]}
+  function placeK(){ks.forEach(function(k,i){var q=pt(U0+(U1-U0)*i/(N-1));k.style.left=q[0]+'px';k.style.top=q[1]+'px'})}
+  placeK();
+  var last='',busy=false;
+  function upd(){busy=false;
+   var r=M.getBoundingClientRect();if(r.bottom<-50||r.top>w.innerHeight+50)return;
+   var top=hd?Math.max(0,Math.round(hd.getBoundingClientRect().bottom)):64;if(bar._t!==top){bar._t=top;bar.style.top=top+'px'}
+   var line=w.innerHeight*.55;
+   var A=dps.map(function(e){return e.getBoundingClientRect().top});
+   var k=0,f=0,pre=0;
+   if(line<=A[0]){k=0;f=0;pre=Math.max(0,Math.min(1,(A[0]-line)/(w.innerHeight*.5)))}
+   else if(line>=A[N-1]){k=N-1;f=0}
+   else{for(var i=0;i<N-1;i++){if(line<A[i+1]){k=i;f=(line-A[i])/(A[i+1]-A[i]);break}}}
+   var u=U0+(U1-U0)*(k+f)/(N-1),q=pt(u),dy=pre*34;
+   var key=u.toFixed(4)+'|'+dy.toFixed(1);if(key===last)return;last=key;
+   sun.style.transform='translate3d('+q[0].toFixed(1)+'px,'+(q[1]+dy).toFixed(1)+'px,0)';
+   done.style.strokeDashoffset=(L*(1-u)).toFixed(1);
+   var j=Math.min(N-1,k+1),fa=k===N-1?0:f;
+   bar.style.setProperty('--sa',mix(SK[k][0],SK[j][0],fa));bar.style.setProperty('--sb',mix(SK[k][1],SK[j][1],fa));
+   var night=Math.max(0,Math.min(1,(k+fa-(N-2))*1.6-.4));bar.style.setProperty('--nt',night.toFixed(2));
+   sun.classList.toggle('moon',k+fa>=N-1.5);
+   var tx=dps[k].getAttribute('data-t')||'';if(tt.textContent!==tx){tt.textContent=tx;if(!RM){tt.classList.remove('ro');void tt.offsetWidth;tt.classList.add('ro')}}
+   ks.forEach(function(e,i){e.classList.toggle('on',i<=k+(f>.98?1:0))});
+  }
+  function req(){if(!busy){busy=true;requestAnimationFrame(upd)}}
+  w.addEventListener('scroll',req,{passive:true});w.addEventListener('resize',function(){placeK();last='';req()});
+  upd();
+ }
+}
+/* 2 · Η Ζάκυνθος πέρα από το καλοκαίρι: each page of the book at its own shape */
+[].forEach.call(d.querySelectorAll('#epoxes .ep-bk'),function(bk){
+ bk.classList.add('r15');
+ function f(){var im=bk.querySelector('.ep-s.on img')||bk.querySelector('.ep-s img');if(!im)return;var h=Math.min(bk.clientWidth/ra(im),CAP).toFixed(1)+'px';if(bk.style.height!==h)bk.style.height=h}
+ fits.push(f);watch(bk,f)});
+/* 3 · Μοναδικές στιγμές: whole photos, two per row at equal height */
+[].forEach.call(d.querySelectorAll('.mo-ph'),function(g){
+ var ph=[].slice.call(g.children).filter(function(a){return a.classList.contains('ph')});if(!ph.length)return;
+ var r=ph.map(function(a){var i=a.querySelector('img');return i?(+i.getAttribute('width')/+i.getAttribute('height'))||1.5:1.5});
+ g.classList.add('r15');
+ ph.forEach(function(a,k){a.style.setProperty('--ar15',r[k].toFixed(4))});
+ var i=0;if(ph.length%2){ph[0].style.width='100%';i=1}
+ for(;i<ph.length;i+=2){var a=r[i],b=r[i+1];ph[i].style.width='calc((100% - 8px) * '+(a/(a+b)).toFixed(4)+')';ph[i+1].style.width='calc((100% - 8px) * '+(b/(a+b)).toFixed(4)+')'}
+});
+w.addEventListener('resize',function(){if(Math.abs(w.innerWidth-W0)<2)return;W0=w.innerWidth;CAP=Math.round(d.documentElement.clientHeight*.78);fits.forEach(function(f){f()})});
+})();
+</script>
+</body>
 </html>
